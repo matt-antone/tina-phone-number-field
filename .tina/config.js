@@ -1,4 +1,9 @@
 import { defineConfig, defineSchema } from "tinacms";
+import phone from "./phone"
+
+const phoneList = {...phone}
+phoneList.name = 'phoneList'
+phoneList.list = true
 
 const schema = defineSchema({
   collections: [
@@ -8,6 +13,8 @@ const schema = defineSchema({
       path: "content/page",
       format: "mdx",
       fields: [
+        phone,
+        phoneList,
         {
           name: "body",
           label: "Main Content",
